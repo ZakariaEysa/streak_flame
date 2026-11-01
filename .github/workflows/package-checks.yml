@@ -1,0 +1,54 @@
+name: Package checks
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - '**.md'
+      - 'doc/**'
+  pull_request:
+    paths-ignore:
+      - '**.md'
+      - 'doc/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  compatibility:
+    name: Flutter ${{ matrix.flutter }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        # Minimum supported SDK and the stable release checked on 2026-11-01.
+        flutter: ['3.38.0', '3.47.9']
+    steps:
+      - name: Check out source
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Set up Flutter
+        uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2
+        with:
+          channel: stable
+          flutter-version: ${{ matrix.flutter }}
+          cache: true
+      - name: Record SDK versions
+        run: flutter --version
+      - name: Resolve package dependencies
+        run: flutter pub get
+      - name: Resolve example dependencies
+        working-directory: example
+        run: flutter pub get
+      - name: Analyze package and example
+        run: flutter analyze --no-pub
+      - name: Run all package tests
+        run: flutter test --no-pub --reporter expanded
+      - name: Build the web example
+        working-directory: example
+        run: flutter build web --no-pub
+      - name: Check publication without uploading
+        run: flutter pub publish --dry-run

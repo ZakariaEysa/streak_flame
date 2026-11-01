@@ -1,3 +1,39 @@
+# Validation — 2026-11-01: SDK compatibility and publication page
+
+Evidence: https://github.com/ZakariaEysa/streak_flame/actions/runs/41334029219
+
+- Flutter 3.38.1 / Dart 3.10.0: dependency resolution, whole-project analysis,
+  all 71 tests, web example compilation, clean tracked-file check, and
+  publication dry run passed. Publication warnings: zero.
+- Flutter 3.47.9 / Dart 3.13.7: the same checks passed, plus generated API
+  documentation with zero warnings and zero errors.
+- Corrected the Flutter minimum to 3.38.1. The 3.38.0 stable-channel archive
+  contains Dart 3.10.0-290.4.beta and cannot satisfy Dart >=3.10.0.
+- Replaced TickerMode.valuesOf(context).enabled with TickerMode.of(context),
+  preserving inherited visibility updates while supporting the minimum SDK.
+  A single local deprecation suppression is required on newer Flutter SDKs.
+  Existing ticker/lifecycle regression tests pass on both SDKs.
+- Explicit example platform/build exclusions prevent the newer Flutter tool
+  from migrating analysis_options.yaml and dirtying the release checkout.
+- Reworked README into a public package page with a complete red/orange card,
+  feature list, installation choices, quick start, example instructions,
+  customization/API guidance, support links, and license. Replaced relative
+  documentation/image links with public URLs so generated API pages work too.
+- Simplified CHANGELOG to the initial public feature set and requirements.
+- Reviewed the rendered public README and checked local documentation links.
+- No physical phone is connected. Android emulator startup/build checks are
+  separate from physical-device profile/performance verification.
+- Local Flutter 3.44 / Dart 3.12: the example Android debug APK compiled
+  successfully with Gradle 9.1.0 / AGP 9.0.1. The first build populated Gradle
+  dependencies; the completed diagnostic build exited 0.
+- Installed and launched that APK on the existing Pixel API 36 x86_64 emulator.
+  Flutter connected to its Dart VM service and completed file synchronization;
+  no Flutter exceptions appeared during the startup smoke test.
+- Quit the example and shut down the task-started headless emulator afterward.
+  No physical-device, iOS/macOS/Linux/Windows native, FPS, or battery claim is
+  established by these checks.
+- No publication to pub.dev was performed.
+
 # Validation — 2026-11-01: GitHub repository setup
 
 - Created the public ZakariaEysa/streak_flame repository with GitHub Issues

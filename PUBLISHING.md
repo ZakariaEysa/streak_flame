@@ -21,15 +21,30 @@ pubspec, routes, Cubits, and streak widgets are unchanged.
 - The current checkout folder is still streak_flame_package; its directory name
   does not determine the Dart package name.
 
+## Completed release checks
+
+- Minimum SDK: Flutter 3.38.1 / Dart 3.10.0. Analysis, all 71 tests, the web
+  example build, and the publication dry run passed.
+- Current stable SDK checked on 2026-11-01: Flutter 3.47.9 / Dart 3.13.7.
+  The same checks passed. Generated API documentation has zero warnings/errors.
+- Both SDKs preserve a clean tracked tree after dependency resolution and builds.
+- Android smoke test: the example APK built with local Flutter 3.44 and started
+  successfully on the existing Pixel API 36 x86_64 emulator in debug mode.
+  Flutter attached to the running app; no Flutter exceptions were observed.
+  This is not a physical-device profile or performance measurement.
+- README and CHANGELOG now describe the public package. The default red/orange
+  full-card preview, installation examples, contact, and license are included.
+- Compatibility evidence:
+  https://github.com/ZakariaEysa/streak_flame/actions/runs/41334029219
+
 ## Required before publication
 
 1. Recheck availability of streak_flame immediately before publication.
-2. Review the exported API, supported SDK versions, and rendered design.
-   Validation currently uses Flutter 3.44 / Dart 3.12; the minimum versions
-   declared in pubspec.yaml still need a separate compatibility run.
-3. Test representative target devices in profile mode. A web compilation or
+2. Test representative target devices in profile mode. A web compilation or
    widget test does not establish Android/iOS runtime behavior or frame timing.
-4. Review README.md, CHANGELOG.md, and the publication file list.
+3. Remove the pre-publication status/installation wording from README.md when
+   the owner authorizes the actual first pub.dev release, then review the final
+   publication file list and rerun the dry run from the clean commit.
 
 ## Commands
 
@@ -55,9 +70,9 @@ SDK dependencies are used at runtime; the example's local path dependency
 is only for development. .pubignore excludes caches, builds, lock files, temporary
 tools, and the two initial compatibility copies.
 
-The latest dry run on 2026-11-01, after pushing the public repository and adding
-its metadata, completed with exit 0 and zero warnings. Device and minimum-SDK
-checks above remain outstanding; this is not a claim of device verification.
+The compatibility workflow on 2026-11-01 completed dry runs on both supported
+SDK checkpoints with exit 0 and zero warnings. Physical-device/profile checks
+above remain outstanding; this is not a claim of device verification.
 
 Once the owner has approved publication, publish from the package directory:
 

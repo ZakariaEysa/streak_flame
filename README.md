@@ -4,7 +4,7 @@ Animated streak flames and celebration cards for Flutter habit, learning,
 fitness, and productivity apps. Supply the previous and new counts; the package
 animates the change and presents the celebration.
 
-![Default red and orange streak celebration](https://raw.githubusercontent.com/ZakariaEysa/streak_flame/main/doc/streak_full.png)
+<img src="https://raw.githubusercontent.com/ZakariaEysa/streak_flame/main/doc/streak_full.png" alt="Default red and orange streak celebration" width="360">
 
 **Release status:** preparing the first pub.dev release, version 0.1.0.
 
@@ -96,7 +96,7 @@ groups. Supplied grouped properties override matching flat options; omitted
 properties keep existing defaults. [Package structure](https://github.com/ZakariaEysa/streak_flame/blob/main/doc/ARCHITECTURE.md)
 describes the shared presentation, validation and animation boundaries.
 
-![Customized celebration and badge](https://raw.githubusercontent.com/ZakariaEysa/streak_flame/main/doc/streak_full_custom.png)
+<img src="https://raw.githubusercontent.com/ZakariaEysa/streak_flame/main/doc/streak_full_custom.png" alt="Customized celebration and badge" width="360">
 
 ## Sizing and count updates
 
@@ -140,7 +140,7 @@ secondaryForeground. Localize every dialog label through StreakStrings.
 
 ## Independent flame and badge colors
 
-![Blue flame with an independently styled pink and white badge](https://raw.githubusercontent.com/ZakariaEysa/streak_flame/main/doc/streak_customization.png)
+<img src="https://raw.githubusercontent.com/ZakariaEysa/streak_flame/main/doc/streak_customization.png" alt="Blue flame with an independently styled pink and white badge" width="300">
 
 Use the same palette on the flame or the celebration dialog. The flame, badge,
 halo, and particles can each have their own colors:

@@ -9,7 +9,8 @@ streak_flame_package، واسم الفولدر مش لازم يطابق اسم �
 ## تشغيل سريع
 
 لازم Flutter يكون متسطّب ومضاف إلى PATH. أقل نسخة معلنة: Flutter 3.38.1 وDart 3.10؛
-التحقق الحالي على Flutter 3.44 / Dart 3.12. اتأكد بالأمر flutter doctor.
+فحص التوافق شمل Flutter 3.38.1 / Dart 3.10 وFlutter 3.47.9 / Dart 3.13.7.
+نسخة جهاز التطوير المحلي Flutter 3.44 / Dart 3.12. اتأكد بالأمر flutter doctor.
 
 من ترمينال جوّه فولدر الباكدج:
 

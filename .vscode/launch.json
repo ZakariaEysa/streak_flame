@@ -1,0 +1,31 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Streak playground (Chrome)",
+      "request": "launch",
+      "type": "dart",
+      "program": "${workspaceFolder}/example/lib/main.dart",
+      "preLaunchTask": "Streak: setup example",
+      "cwd": "${workspaceFolder}/example",
+      "deviceId": "chrome"
+    },
+    {
+      "name": "Streak playground (choose device)",
+      "request": "launch",
+      "type": "dart",
+      "program": "${workspaceFolder}/example/lib/main.dart",
+      "preLaunchTask": "Streak: setup example",
+      "cwd": "${workspaceFolder}/example"
+    },
+    {
+      "name": "Streak playground (profile)",
+      "request": "launch",
+      "type": "dart",
+      "program": "${workspaceFolder}/example/lib/main.dart",
+      "preLaunchTask": "Streak: setup example",
+      "cwd": "${workspaceFolder}/example",
+      "flutterMode": "profile"
+    }
+  ]
+}

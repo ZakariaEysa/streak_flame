@@ -1,0 +1,25 @@
+name: streak_flame
+description: A customizable animated streak flame and responsive celebration dialog for Flutter, with replay controls and reduced-motion support.
+version: 0.1.0
+repository: https://github.com/ZakariaEysa/streak_flame
+issue_tracker: https://github.com/ZakariaEysa/streak_flame/issues
+environment:
+  sdk: '>=3.10.0 <4.0.0'
+  flutter: '>=3.38.0'
+dependencies:
+  flutter:
+    sdk: flutter
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+topics:
+  - animation
+  - widgets
+  - streak
+screenshots:
+  - description: 'Default red and orange streak flame with a day-count badge.'
+    path: doc/streak_preview.png
+  - description: 'Complete streak celebration card with the default flame and a continue action.'
+    path: doc/streak_full.png
+flutter:
+  uses-material-design: true

@@ -1,0 +1,14 @@
+name: streak_flame_example
+description: Interactive showcase for streak_flame.
+publish_to: none
+version: 1.0.0
+environment:
+  sdk: '>=3.10.0 <4.0.0'
+  flutter: '>=3.38.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  streak_flame:
+    path: ../
+flutter:
+  uses-material-design: true

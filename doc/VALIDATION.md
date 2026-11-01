@@ -1,3 +1,26 @@
+# Validation — 2026-11-01: user-started LDPlayer integration run
+
+- At the owner's request, continued verification on their LDPlayer emulator,
+  device emulator-5554. The owner confirmed the playground was visible.
+- Added example-only flutter_test/integration_test SDK development dependencies
+  and example/integration_test/streak_emulator_test.dart. Package runtime
+  dependencies, presentation defaults, and production code are unchanged.
+- The complete native suite passed: 2 tests, exit 0. It verifies replay,
+  pause/resume, increases from 7 to 8, restart to 1, loss to 0, full inline
+  celebration, modal Continue/Close dismissal, Arabic RTL, and reduced motion.
+- Completion messages use bounded frame pumping in the integration harness so
+  assertions wait for the animation's displayed result.
+- Local result log: build/ldplayer-integration-final.log (excluded from source
+  control and published packages). The test can be rerun from example with
+  flutter test integration_test/streak_emulator_test.dart -d <device-id>.
+- The Windows emulator-window capture tool timed out; no screenshot-based
+  visual-verification claim is made. The functional checks ran in the app on
+  the emulator through Flutter's integration binding.
+- The owner chose emulator-based verification for this first release;
+  physical-device profiling is deferred and not a publication gate.
+- The user-started emulator is left running for manual review. No pub.dev
+  publication was performed.
+
 # Validation — 2026-11-01: SDK compatibility and publication page
 
 Evidence: https://github.com/ZakariaEysa/streak_flame/actions/runs/41334029219

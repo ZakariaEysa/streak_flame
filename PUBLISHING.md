@@ -20,6 +20,8 @@ pubspec, routes, Cubits, and streak widgets are unchanged.
   in pubspec.yaml and linked from README.md.
 - The current checkout folder is still streak_flame_package; its directory name
   does not determine the Dart package name.
+- The owner chose emulator-based validation for the first release. Physical
+  device profiling is deferred; no physical-device performance claim is made.
 
 ## Completed release checks
 
@@ -32,6 +34,10 @@ pubspec, routes, Cubits, and streak widgets are unchanged.
   successfully on the existing Pixel API 36 x86_64 emulator in debug mode.
   Flutter attached to the running app; no Flutter exceptions were observed.
   This is not a physical-device profile or performance measurement.
+- User-started LDPlayer emulator: both native integration scenarios passed
+  together. They cover replay, pause/resume, increases, resets to one/zero,
+  the full card, modal Continue/Close, Arabic RTL, and reduced motion.
+  The reproducible suite is example/integration_test/streak_emulator_test.dart.
 - README and CHANGELOG now describe the public package. The default red/orange
   full-card preview, installation examples, contact, and license are included.
 - Compatibility evidence:
@@ -40,11 +46,15 @@ pubspec, routes, Cubits, and streak widgets are unchanged.
 ## Required before publication
 
 1. Recheck availability of streak_flame immediately before publication.
-2. Test representative target devices in profile mode. A web compilation or
-   widget test does not establish Android/iOS runtime behavior or frame timing.
-3. Remove the pre-publication status/installation wording from README.md when
+2. Remove the pre-publication status/installation wording from README.md when
    the owner authorizes the actual first pub.dev release, then review the final
    publication file list and rerun the dry run from the clean commit.
+
+## Follow-up device checks
+
+Physical Android/iOS profile runs remain recommended for device-specific behavior
+and frame timing. They are deferred for this first release at the owner's
+request. Widget, web, and emulator results do not establish those measurements.
 
 ## Commands
 

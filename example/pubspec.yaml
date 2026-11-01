@@ -10,5 +10,10 @@ dependencies:
     sdk: flutter
   streak_flame:
     path: ../
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
 flutter:
   uses-material-design: true

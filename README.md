@@ -341,6 +341,17 @@ flutter analyze --no-pub
 flutter test --no-pub
 ```
 
+To run the native interaction checks, start an Android emulator, then run from
+the example directory (replace `<device-id>` with the ID from `flutter devices`):
+
+```sh
+flutter test integration_test/streak_emulator_test.dart -d <device-id>
+```
+
+These checks cover replay, pause/resume, count increases/resets, full-card modal
+actions, Arabic RTL, and reduced motion. Emulator checks do not measure physical
+device performance.
+
 [Package checks](https://github.com/ZakariaEysa/streak_flame/actions/workflows/package-checks.yml)
 run analysis, tests, the web example build, and a publication dry run on the SDKs
 listed in the workflow.

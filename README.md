@@ -4,7 +4,7 @@ Animated streak flames and celebration cards for Flutter habit, learning,
 fitness, and productivity apps. Supply the previous and new counts; the package
 animates the change and presents the celebration.
 
-![Default red and orange streak celebration](doc/streak_full.png)
+![Default red and orange streak celebration](https://raw.githubusercontent.com/ZakariaEysa/streak_flame/main/doc/streak_full.png)
 
 **Release status:** preparing the first pub.dev release, version 0.1.0.
 
@@ -88,15 +88,15 @@ Appearance is optional and divided by scope:
 | numberStyle / unitStyle | Badge typography |
 | strings / header / footer | Messages and replacement header/action widgets |
 
-[Complete customization guide (Arabic)](doc/CUSTOMIZATION.md) explains every
+[Complete customization guide (Arabic)](https://github.com/ZakariaEysa/streak_flame/blob/main/doc/CUSTOMIZATION.md) explains every
 color, shape, border, gradient, override precedence, and defaults with examples.
 BigStreakFlameWidget and StreakCelebrationDialog are also available as direct APIs.
 StreakCelebrationStyle also accepts optional card/header/text/closeButton/action
 groups. Supplied grouped properties override matching flat options; omitted
-properties keep existing defaults. [Package structure](doc/ARCHITECTURE.md)
+properties keep existing defaults. [Package structure](https://github.com/ZakariaEysa/streak_flame/blob/main/doc/ARCHITECTURE.md)
 describes the shared presentation, validation and animation boundaries.
 
-![Customized celebration and badge](doc/streak_full_custom.png)
+![Customized celebration and badge](https://raw.githubusercontent.com/ZakariaEysa/streak_flame/main/doc/streak_full_custom.png)
 
 ## Sizing and count updates
 
@@ -140,7 +140,7 @@ secondaryForeground. Localize every dialog label through StreakStrings.
 
 ## Independent flame and badge colors
 
-![Blue flame with an independently styled pink and white badge](doc/streak_customization.png)
+![Blue flame with an independently styled pink and white badge](https://raw.githubusercontent.com/ZakariaEysa/streak_flame/main/doc/streak_customization.png)
 
 Use the same palette on the flame or the celebration dialog. The flame, badge,
 halo, and particles can each have their own colors:
@@ -345,9 +345,9 @@ flutter test --no-pub
 run analysis, tests, the web example build, and a publication dry run on the SDKs
 listed in the workflow.
 
-See [setup and editing guide (Arabic)](START_HERE.md),
-[publication steps](PUBLISHING.md), and
-[performance measurement notes](doc/PERFORMANCE.md).
+See [setup and editing guide (Arabic)](https://github.com/ZakariaEysa/streak_flame/blob/main/START_HERE.md),
+[publication steps](https://github.com/ZakariaEysa/streak_flame/blob/main/PUBLISHING.md), and
+[performance measurement notes](https://github.com/ZakariaEysa/streak_flame/blob/main/doc/PERFORMANCE.md).
 
 ## Contact
 
@@ -361,4 +361,4 @@ For questions, feedback, or support, contact **ZakariaEysa** at
 
 Maintained by **ZakariaEysa**. Copyright (c) 2026 ZakariaEysa.
 
-This package is distributed under the [MIT License](LICENSE).
+This package is distributed under the [MIT License](https://github.com/ZakariaEysa/streak_flame/blob/main/LICENSE).

@@ -52,7 +52,9 @@ jobs:
         run: flutter build web --no-pub
       - name: Generate API documentation
         if: matrix.flutter == '3.47.9'
-        run: dart doc --output build/api --validate-links
+        run: |
+          dart doc --output build/api --validate-links 2>&1 | tee build/api-docs.log
+          python3 -c "from pathlib import Path; text = Path('build/api-docs.log').read_text(); assert 'warning:' not in text, 'API documentation contains warnings'"
       - name: Verify SDK commands preserve tracked files
         run: git diff --exit-code
       - name: Check publication without uploading

@@ -22,6 +22,9 @@ pubspec, routes, Cubits, and streak widgets are unchanged.
   does not determine the Dart package name.
 - The owner chose emulator-based validation for the first release. Physical
   device profiling is deferred; no physical-device performance claim is made.
+- The owner authorized publishing streak_flame 0.1.0 to pub.dev on 2026-11-01,
+  using their Google account zakariaeysa@gmail.com. Authentication is completed
+  by the owner through the normal pub login flow.
 
 ## Completed release checks
 
@@ -43,12 +46,15 @@ pubspec, routes, Cubits, and streak widgets are unchanged.
 - Compatibility evidence:
   https://github.com/ZakariaEysa/streak_flame/actions/runs/41337013194
 
-## Required before publication
+## Final publication preparation
 
-1. Recheck availability of streak_flame immediately before publication.
-2. Remove the pre-publication status/installation wording from README.md when
-   the owner authorizes the actual first pub.dev release, then review the final
-   publication file list and rerun the dry run from the clean commit.
+1. Availability rechecked on 2026-11-01 immediately before the release attempt:
+   the pub.dev package API returned 404 for streak_flame.
+2. Removed pre-publication wording from README.md and added the hosted
+   installation command. Development/release audit documents stay on GitHub
+   and are excluded from the published archive; README links use GitHub URLs.
+3. Review the final file list, commit it, and run the final dry run before
+   authenticating and publishing. Record the confirmed result afterward.
 
 ## Follow-up device checks
 

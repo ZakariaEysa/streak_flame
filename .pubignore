@@ -4,6 +4,9 @@ coverage/
 pubspec.lock
 flutter_*.log
 tool/
+/PUBLISHING.md
+/START_HERE.md
+/doc/VALIDATION.md
 example/.dart_tool/
 example/build/
 example/pubspec.lock

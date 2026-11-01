@@ -6,8 +6,6 @@ animates the change and presents the celebration.
 
 <img src="https://raw.githubusercontent.com/ZakariaEysa/streak_flame/main/doc/streak_full.png" alt="Default red and orange streak celebration" width="360">
 
-**Release status:** preparing the first pub.dev release, version 0.1.0.
-
 ## Features
 
 - Flame and count badge, inline celebration card, or modal celebration.
@@ -23,23 +21,20 @@ Requires Dart 3.10+ and Flutter 3.38.1+.
 
 ## Installation
 
-After version 0.1.0 is published on pub.dev, add:
+Install the package:
+
+```sh
+flutter pub add streak_flame
+```
+
+Or add it to pubspec.yaml:
 
 ```yaml
 dependencies:
   streak_flame: ^0.1.0
 ```
 
-Before publication, use the source repository:
-
-```yaml
-dependencies:
-  streak_flame:
-    git:
-      url: https://github.com/ZakariaEysa/streak_flame.git
-```
-
-For local development, replace the git dependency with `path: ../streak_flame`,
+For local development, replace the hosted dependency with `path: ../streak_flame`,
 adjusting the path to your checkout.
 
 ## Quick start

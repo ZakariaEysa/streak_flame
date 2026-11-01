@@ -212,7 +212,9 @@ class _BigStreakFlameWidgetState extends State<BigStreakFlameWidget>
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    _visible = TickerMode.valuesOf(context).enabled;
+    // Supported older Flutter SDKs do not expose TickerMode.valuesOf.
+    // ignore: deprecated_member_use
+    _visible = TickerMode.of(context);
     _reduced =
         widget.respectReducedMotion && MediaQuery.disableAnimationsOf(context);
     _syncMotion();

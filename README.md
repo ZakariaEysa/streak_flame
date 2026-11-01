@@ -1,57 +1,61 @@
 # streak_flame
 
-An animated streak flame and celebration dialog for Flutter. Use it in habit,
-learning, fitness, or productivity apps: your application supplies the counts,
-and the package handles presentation.
+Animated streak flames and celebration cards for Flutter habit, learning,
+fitness, and productivity apps. Supply the previous and new counts; the package
+animates the change and presents the celebration.
 
-![Streak flame preview](doc/streak_preview.png)
+![Default red and orange streak celebration](doc/streak_full.png)
 
-**Release candidate:** not published yet. The selected public package name
-is streak_flame, licensed under MIT. The default presentation keeps the red/orange
-flame.
+**Release status:** preparing the first pub.dev release, version 0.1.0.
 
-## Run and edit independently
+## Features
 
-Clone the repository and open it as its own workspace. The example uses only
-the local package at path: ../ and the Flutter SDK.
-[Start here (Arabic)](START_HERE.md) explains setup, editing, tests, and transport.
+- Flame and count badge, inline celebration card, or modal celebration.
+- Independent flame, badge, card, gradient, border, and typography controls.
+- Automatic count transitions, replay, pause, resume, and configurable timing.
+- Custom messages, restart wording, number formatting, and inherited RTL.
+- Reduced-motion preferences, stable screen-reader labels, and responsive layout.
+- Flutter SDK only at runtime; no images, remote fonts, or other packages required.
 
-```sh
-git clone https://github.com/ZakariaEysa/streak_flame.git
-cd streak_flame
-flutter pub get
-cd example
-flutter pub get
-flutter run -d chrome
+The package presents streaks; your app calculates and stores them.
+
+Requires Dart 3.10+ and Flutter 3.38.1+.
+
+## Installation
+
+After version 0.1.0 is published on pub.dev, add:
+
+```yaml
+dependencies:
+  streak_flame: ^0.1.0
 ```
 
-VS Code launch configurations and tasks are included. On Windows, run
-tool/playground.ps1 for Chrome, use -Action check -BuildWeb for verification,
-or -Action pack to create build/portable/streak_flame.zip.
-The ZIP omits generated caches and machine-specific SDK configuration.
-
-The default example opens a plain package preview with no settings panel.
-Edit the clearly named values and Arabic comments in
-example/lib/streak_preview_page.dart, then hot reload.
-For the optional interactive playground, run from example:
-flutter run -t lib/playground_main.dart -d chrome.
-
-## Install locally
-
-Until the package is published, add a path dependency to the consuming app:
+Before publication, use the source repository:
 
 ```yaml
 dependencies:
   streak_flame:
-    path: ../streak_flame
+    git:
+      url: https://github.com/ZakariaEysa/streak_flame.git
 ```
 
-The path above assumes a sibling clone named streak_flame; adjust it to wherever
-you keep the package. The Dart package name and public import are streak_flame
-regardless of the folder name.
+For local development, replace the git dependency with `path: ../streak_flame`,
+adjusting the path to your checkout.
 
-Requires Dart 3.10+ and Flutter 3.38+. Runtime dependencies: Flutter SDK only.
-No Firebase, Cubit, API, localization library, images, or remote fonts.
+## Quick start
+
+```dart
+import 'package:streak_flame/streak_flame.dart';
+
+const StreakWidget(
+  oldStreak: 6,
+  newStreak: 7,
+  size: 220,
+);
+```
+
+Place the widget inside a Flutter app with Material and Directionality ancestors,
+such as a MaterialApp and Scaffold.
 
 ## One widget, two presentations
 
@@ -86,26 +90,15 @@ Appearance is optional and divided by scope:
 
 [Complete customization guide (Arabic)](doc/CUSTOMIZATION.md) explains every
 color, shape, border, gradient, override precedence, and defaults with examples.
-BigStreakFlameWidget and StreakCelebrationDialog remain compatibility APIs.
+BigStreakFlameWidget and StreakCelebrationDialog are also available as direct APIs.
 StreakCelebrationStyle also accepts optional card/header/text/closeButton/action
 groups. Supplied grouped properties override matching flat options; omitted
 properties keep existing defaults. [Package structure](doc/ARCHITECTURE.md)
 describes the shared presentation, validation and animation boundaries.
 
-![Complete celebration](doc/streak_full.png)
 ![Customized celebration and badge](doc/streak_full_custom.png)
 
-## Basic usage
-
-```dart
-import 'package:streak_flame/streak_flame.dart';
-
-const StreakWidget(
-  oldStreak: 6,
-  newStreak: 7,
-  size: 220,
-);
-```
+## Sizing and count updates
 
 The original layered flame, pulsing halo, burst, and count transition are drawn
 in code. Changing oldStreak or newStreak restarts an automatic transition.
@@ -310,22 +303,50 @@ The helper supports barrierDismissible, useRootNavigator, barrierColor, and
 optional blurSigma (default 0). onDismiss runs after close, action, back, or
 barrier dismissal. You can also embed StreakCelebrationDialog directly.
 
-## Example and validation
+## Example
 
-From the package directory:
+Clone the repository and run the example:
+
+```sh
+git clone https://github.com/ZakariaEysa/streak_flame.git
+cd streak_flame
+flutter pub get
+cd example
+flutter pub get
+flutter run -d chrome
+```
+
+The default example opens a direct package preview. Edit the counts, styles, and
+messages in example/lib/streak_preview_page.dart, then hot reload.
+
+For the interactive playground, run from example:
+
+```sh
+flutter run -t lib/playground_main.dart -d chrome
+```
+
+The playground includes replay, pause, next-day updates, restarts, independent
+flame/badge themes, RTL, motion settings, editable messages, size/timing/particle
+controls, reduced motion, and text scaling. Host files are included for web,
+Android, iOS, Windows, Linux, and macOS; native builds require each platform's
+toolchain. Included host files do not establish device or performance testing.
+
+## Development and validation
+
+From the package root:
 
 ```sh
 flutter pub get
 flutter analyze --no-pub
-flutter test --no-pub test/streak_widget_test.dart test/streak_dialog_test.dart test/streak_messages_test.dart test/streak_palette_test.dart test/streak_playground_test.dart test/visual_preview_test.dart
-cd example
-flutter run -d chrome
+flutter test --no-pub
 ```
 
-The example offers replay, pause, next-day updates, restarts, theme switching, RTL, and
-motion toggles, custom messages, editable counts, size/timing/particle sliders, reduced motion, and text scaling. Flame and badge themes can be switched independently. Host files are included for web, Android, iOS, Windows, Linux, and macOS; native builds require each platform toolchain.
+[Package checks](https://github.com/ZakariaEysa/streak_flame/actions/workflows/package-checks.yml)
+run analysis, tests, the web example build, and a publication dry run on the SDKs
+listed in the workflow.
 
-See [publication steps](PUBLISHING.md) and
+See [setup and editing guide (Arabic)](START_HERE.md),
+[publication steps](PUBLISHING.md), and
 [performance measurement notes](doc/PERFORMANCE.md).
 
 ## Contact

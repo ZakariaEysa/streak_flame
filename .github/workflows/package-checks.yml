@@ -24,7 +24,7 @@ jobs:
       fail-fast: false
       matrix:
         # Minimum supported SDK and the stable release checked on 2026-11-01.
-        flutter: ['3.38.0', '3.47.9']
+        flutter: ['3.38.1', '3.47.9']
     steps:
       - name: Check out source
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
@@ -50,5 +50,10 @@ jobs:
       - name: Build the web example
         working-directory: example
         run: flutter build web --no-pub
+      - name: Generate API documentation
+        if: matrix.flutter == '3.47.9'
+        run: dart doc --output build/api --validate-links
+      - name: Verify SDK commands preserve tracked files
+        run: git diff --exit-code
       - name: Check publication without uploading
         run: flutter pub publish --dry-run

@@ -18,6 +18,13 @@
   the emulator through Flutter's integration binding.
 - The owner chose emulator-based verification for this first release;
   physical-device profiling is deferred and not a publication gate.
+- After adding the SDK-only integration development setup, package checks passed
+  again on Flutter 3.38.1 and 3.47.9:
+  https://github.com/ZakariaEysa/streak_flame/actions/runs/41337013194
+- The local final publication dry run exited 0 with zero warnings; compressed
+  archive size is approximately 557 KB. The Git checkout is clean.
+- Restored the normal interactive playground after the test run and verified
+  that the app remained running after detaching Flutter tooling.
 - The user-started emulator is left running for manual review. No pub.dev
   publication was performed.
 

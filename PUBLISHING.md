@@ -41,7 +41,7 @@ pubspec, routes, Cubits, and streak widgets are unchanged.
 - README and CHANGELOG now describe the public package. The default red/orange
   full-card preview, installation examples, contact, and license are included.
 - Compatibility evidence:
-  https://github.com/ZakariaEysa/streak_flame/actions/runs/41334029219
+  https://github.com/ZakariaEysa/streak_flame/actions/runs/41337013194
 
 ## Required before publication
 

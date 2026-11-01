@@ -1,3 +1,22 @@
+# Validation — 2026-11-01: published 0.1.0
+
+- The owner authorized the first release and personally completed the standard
+  Google login flow as zakariaeysa@gmail.com in their external browser.
+- Final source commit: fc6f897faa33703e6d52f60f4d4ffb85caee8dee, tagged v0.1.0.
+- Final clean-checkout dry run: exit 0, zero warnings, approximately 544 KB.
+  Release/audit documents remain on GitHub and are excluded from the archive.
+- flutter pub publish --force: exit 0. The server confirmed successful upload
+  of https://pub.dev/packages/streak_flame version 0.1.0.
+- The public package API and HTML page returned HTTP 200. Verified version,
+  repository/Issues URLs, two screenshots, public contact email, and default
+  full-card preview on the published page.
+- A temporary standalone consumer at build/hosted-release-smoke resolved
+  streak_flame 0.1.0 from the hosted pub.dev cache, not a local/path dependency,
+  and successfully compiled its web app with StreakWidget (including Wasm dry
+  run). Existing optional CupertinoIcons font warning remains.
+- Opened the published page in the owner's external browser. No later package
+  version was published.
+
 # Validation — 2026-11-01: user-started LDPlayer integration run
 
 - At the owner's request, continued verification on their LDPlayer emulator,

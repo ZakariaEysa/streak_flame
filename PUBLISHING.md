@@ -1,4 +1,15 @@
-# Publication preparation
+# Publication record and future releases
+
+## Published release
+
+- streak_flame 0.1.0 was successfully published to pub.dev on 2026-11-01.
+- Package page: https://pub.dev/packages/streak_flame
+- Published source commit: fc6f897faa33703e6d52f60f4d4ffb85caee8dee.
+- Git tag v0.1.0 points to that exact source commit and is pushed to GitHub.
+- Confirmed version 0.1.0 in the pub.dev API and checked the live page's contact
+  email, Issues link, and default preview.
+- A separate consumer downloaded the hosted 0.1.0 package from pub.dev and
+  successfully compiled a web app using StreakWidget.
 
 All package work is contained in this directory. The parent application's
 pubspec, routes, Cubits, and streak widgets are unchanged.
@@ -46,15 +57,16 @@ pubspec, routes, Cubits, and streak widgets are unchanged.
 - Compatibility evidence:
   https://github.com/ZakariaEysa/streak_flame/actions/runs/41337013194
 
-## Final publication preparation
+## Completed first-release preparation
 
 1. Availability rechecked on 2026-11-01 immediately before the release attempt:
    the pub.dev package API returned 404 for streak_flame.
 2. Removed pre-publication wording from README.md and added the hosted
    installation command. Development/release audit documents stay on GitHub
    and are excluded from the published archive; README links use GitHub URLs.
-3. Review the final file list, commit it, and run the final dry run before
-   authenticating and publishing. Record the confirmed result afterward.
+3. Reviewed and committed the final file list. The final dry run exited 0 with
+   zero warnings. The owner completed Google login, and the upload exited 0
+   with the server's successful publication confirmation.
 
 ## Follow-up device checks
 
@@ -90,13 +102,13 @@ The compatibility workflow on 2026-11-01 completed dry runs on both supported
 SDK checkpoints with exit 0 and zero warnings. Physical-device/profile checks
 above remain outstanding; this is not a claim of device verification.
 
-Once the owner has approved publication, publish from the package directory:
+For a future release, increment the version in pubspec.yaml and update
+CHANGELOG.md, run the checks above, then publish from the package directory:
 
 ```sh
 dart pub publish
 ```
 
-Publishing is a separate external action. It has not been performed.
-New releases require a new version and an updated changelog.
+Version 0.1.0 is already published and must not be uploaded again.
 
 Official guidance: https://dart.dev/tools/pub/publishing

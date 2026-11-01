@@ -55,6 +55,10 @@ SDK dependencies are used at runtime; the example's local path dependency
 is only for development. .pubignore excludes caches, builds, lock files, temporary
 tools, and the two initial compatibility copies.
 
+The latest dry run on 2026-11-01, after pushing the public repository and adding
+its metadata, completed with exit 0 and zero warnings. Device and minimum-SDK
+checks above remain outstanding; this is not a claim of device verification.
+
 Once the owner has approved publication, publish from the package directory:
 
 ```sh

@@ -9,6 +9,11 @@
   copies, and the original path scratch file.
 - The initial source selection contains the package, all tests, example hosts,
   documentation, preview images, license, and development tooling.
+- Pushed the initial source commit 7b2deb5 to main and verified the public
+  repository through the GitHub connector.
+- flutter pub publish --dry-run from the clean checkout: exit 0, zero warnings,
+  compressed archive approximately 554 KB. No upload to pub.dev was performed.
+- Native-device and minimum-SDK verification remain separate release checks.
 
 # Validation — 2026-11-01: public contact email
 
